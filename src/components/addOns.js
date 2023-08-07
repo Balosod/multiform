@@ -7,42 +7,42 @@ const AddOns = ({stepThreeColor,isYearly, handleAddsSelection, selectedAdds, add
         {
             addsName : "Online Service",
             addsText : "Access to multiplay games",
-            addsPrice: "+1$/mo",
+            addsPrice: "+$1/mo",
             isMonthly: true,
 
         },
         {
             addsName : "Large Storage",
             addsText : "Extra 1TB of cloud save",
-            addsPrice: "+2$/mo",
+            addsPrice: "+$2/mo",
             isMonthly: true,
 
         },
         {
             addsName : "Customizable profile",
             addsText : "Custom theme on your profile",
-            addsPrice: "+2$/mo",
+            addsPrice: "+$2/mo",
             isMonthly: true,
 
         },
         {
             addsName : "Online Service",
             addsText : "Access to multiplay games",
-            addsPrice: "+10$/yr",
+            addsPrice: "+$10/yr",
             isMonthly: false,
 
         },
         {
             addsName : "Large Storage",
             addsText : "Extra 1TB of cloud save",
-            addsPrice: "+20$/yr",
+            addsPrice: "+$20/yr",
             isMonthly: false,
 
         },
         {
             addsName : "Customizable profile",
             addsText : "Custom theme on your profile",
-            addsPrice: "+20$/yr",
+            addsPrice: "+$20/yr",
             isMonthly: false,
 
         },

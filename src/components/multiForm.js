@@ -4,6 +4,7 @@ import PersonalInfo from "./personalInfo";
 import SelectPlan from "./selectPlan";
 import AddOns from "./addOns";
 import Summary from "./summary";
+import SummaryText from "./summaryText";
 
 
 
@@ -30,6 +31,7 @@ const Form = () => {
     const [stepTwoColor,setStepTwoColor] = useState(false)
     const [stepThreeColor,setStepThreeColor] = useState(false)
     const [stepFourColor,setStepFourColor] = useState(false)
+    const [lastStep, setLastStep] = useState(false)
     const [isYearly, setIsYearly] = useState(false);
 
    
@@ -162,6 +164,13 @@ const infoHandler = () => {
 
     }
 
+    const confirm = () =>{
+        // setStepFourColor(false)
+        setLastStep(true)
+        
+       
+    }
+
     const handlePlanSelection = (plan) => {
         setPlanError(false)
         setSelectedPlan({ name: plan.name, price: plan.priceMonthly || plan.priceYearly, isYearly: isYearly });
@@ -213,7 +222,10 @@ const infoHandler = () => {
                 <AddOns stepThreeColor={stepThreeColor} isYearly={isYearly}  handleAddsSelection={handleAddsSelection} selectedAdds={selectedAdds} addsError={addsError} addsHandler={addsHandler} backToStepTwo={backToStepTwo}/>
 
                 {/* SUMMARY */}
-                <Summary stepFourColor={stepFourColor} isYearly={isYearly} selectedPlan={selectedPlan} selectedAdds={selectedAdds} jumpToStepTwo={jumpToStepTwo} backToStepThree={backToStepThree}/>
+                <Summary stepFourColor={stepFourColor} lastStep={lastStep} isYearly={isYearly} selectedPlan={selectedPlan} selectedAdds={selectedAdds} jumpToStepTwo={jumpToStepTwo} backToStepThree={backToStepThree} confirm={confirm}/>
+
+                {/* SUMMARY TEXT */}
+                <SummaryText lastStep={lastStep}/>
 
 
 
