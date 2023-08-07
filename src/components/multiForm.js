@@ -200,7 +200,7 @@ const infoHandler = () => {
 
         <div className="bg-gray-200  flex justify-center">
             
-           <div className="flex flex-row space-x-10 w-2/3 my-20 rounded-md p-4 bg-white ">
+           <div className="flex flex-row space-x-10 w-2/3 my-10 rounded-md p-4 bg-white ">
             
             {/* Step */}
             <Step stepOneColor={stepOneColor} stepTwoColor={stepTwoColor} stepThreeColor={stepThreeColor} stepFourColor={stepFourColor} />
