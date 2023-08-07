@@ -1,11 +1,10 @@
 import { useState } from "react";
-import arcade from '../icon-arcade.svg'
-import advanced from '../icon-advanced.svg'
-import pro from '../icon-pro.svg'
 import Step from "./steps";
 import PersonalInfo from "./personalInfo";
 import SelectPlan from "./selectPlan";
 import AddOns from "./addOns";
+import Summary from "./summary";
+
 
 
 
@@ -15,6 +14,7 @@ const Form = () => {
 	const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [selectedPlan, setSelectedPlan] = useState({ name: null, price:null, isYearly: false });
+    const [selectedAdds, setSelectedAdds] = useState([])
 
    
 
@@ -24,6 +24,7 @@ const Form = () => {
     const [phoneError, setPhoneError] = useState(false);
     const [phoneValid, setPhoneValid] = useState(true);
     const [planError, setPlanError] = useState(false);
+    const [addsError, setAddsError] = useState(false);
 
     const [stepOneColor,setStepOneColor] = useState(true)
     const [stepTwoColor,setStepTwoColor] = useState(false)
@@ -31,56 +32,29 @@ const Form = () => {
     const [stepFourColor,setStepFourColor] = useState(false)
     const [isYearly, setIsYearly] = useState(false);
 
-    const plans = [
-        {
-          name: 'Arcade',
-          priceMonthly: '$9/mo',
-          isMonthly: true,
-          imageUrl: arcade,
-        },
-        {
-          name: 'Advanced',
-          priceMonthly: '$12/mo',
-          isMonthly: true,
-          imageUrl: advanced,
-        },
-        {
-          name: 'Pro',
-          priceMonthly: '$15/mo',
-          isMonthly: true,
-          imageUrl: pro,
-        },
-
-        {
-            name: 'Arcade',
-            isMonthly: false,
-            priceYearly: '$90/yr',
-            imageUrl: arcade,
-            freeYearPlan:"2 months free"
-          },
-          {
-            name: 'Advanced',
-            isMonthly: false,
-            priceYearly: '$120/yr',
-            imageUrl: advanced,
-            freeYearPlan:"2 months free"
-          },
-          {
-            name: 'Pro',
-            isMonthly: false,
-            priceYearly: '$150/yr',
-            imageUrl: pro,
-            freeYearPlan:"2 months free"
-          }
-      ];
-
-    
-    
-
-
-    const backHandlerOne = () =>{
+   
+    const backToStepOne = () =>{
         setStepOneColor(true)
         setStepTwoColor(false)
+    }
+
+    const backToStepTwo = () =>{
+        console.log("called")
+        setStepTwoColor(true)
+        setStepThreeColor(false)
+    }
+
+    const jumpToStepTwo = () =>{
+        console.log("called")
+        setStepTwoColor(true)
+        setStepThreeColor(false)
+        setStepFourColor(false)
+    }
+
+    const backToStepThree = () =>{
+        console.log("called")
+        setStepThreeColor(true)
+        setStepFourColor(false)
     }
 
     const validateEmail = (email) => {
@@ -159,13 +133,14 @@ const infoHandler = () => {
 
     const handleToggleChange = () => {
         setIsYearly(!isYearly);
+        setAddsError(false);
         setSelectedPlan({ name: null, price:null, isYearly: isYearly })
+        setSelectedAdds([])
        
       };
 
 
     const planHandler = () => {
-        //console.log(selectedPlan)
         if (selectedPlan.name === null){
             setPlanError(true)
             return
@@ -176,20 +151,39 @@ const infoHandler = () => {
 
     }
 
+    const addsHandler = () => {
+        if (selectedAdds.length === 0){
+            setAddsError(true)
+            return
+        }
+        setStepThreeColor(false)
+        setStepFourColor(true)
+       
+
+    }
+
     const handlePlanSelection = (plan) => {
-        // console.log(plan)
         setPlanError(false)
         setSelectedPlan({ name: plan.name, price: plan.priceMonthly || plan.priceYearly, isYearly: isYearly });
-        // setSelectedPlan((prevSelectedPlan) => ({
-        //     name: plan,
-        //     isYearly: prevSelectedPlan.isYearly
-        //   }));
           
       };
     
+
+    const handleAddsSelection = (add) => {
+        //console.log(add)
+        setAddsError(false);
+        if (selectedAdds.some(item => item.addsName === add.addsName && item.addsPrice === add.addsPrice)) {
+          setSelectedAdds(prevAdds => prevAdds.filter(item => item.addsName !== add.addsName || item.addsPrice !== add.addsPrice));
+        } else {
+          setSelectedAdds(prevAdds => [...prevAdds, add]);
+        }
+      };
+
     
-    console.log(selectedPlan)
-    //   console.log(name)
+    //console.log(name)
+    //console.log(selectedPlan)
+     //console.log(selectedAdds)
+     console.log(isYearly)
     
 
 
@@ -213,10 +207,13 @@ const infoHandler = () => {
                 
 
                 {/* SELECT PLAN */}
-                <SelectPlan stepTwoColor={stepTwoColor} backHandlerOne={backHandlerOne} plans={plans} selectedPlan={selectedPlan} handlePlanSelection={handlePlanSelection} handleToggleChange={handleToggleChange} isYearly={isYearly} planHandler={planHandler} planError={planError}/>
+                <SelectPlan stepTwoColor={stepTwoColor} backToStepOne={backToStepOne} selectedPlan={selectedPlan} handlePlanSelection={handlePlanSelection} handleToggleChange={handleToggleChange} isYearly={isYearly} planHandler={planHandler} planError={planError}/>
 
                 {/* ADD-ONS */}
-                <AddOns stepThreeColor={stepThreeColor} isYearly={isYearly}/>
+                <AddOns stepThreeColor={stepThreeColor} isYearly={isYearly}  handleAddsSelection={handleAddsSelection} selectedAdds={selectedAdds} addsError={addsError} addsHandler={addsHandler} backToStepTwo={backToStepTwo}/>
+
+                {/* SUMMARY */}
+                <Summary stepFourColor={stepFourColor} isYearly={isYearly} selectedPlan={selectedPlan} selectedAdds={selectedAdds} jumpToStepTwo={jumpToStepTwo} backToStepThree={backToStepThree}/>
 
 
 

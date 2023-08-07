@@ -1,15 +1,8 @@
 import { useState } from "react";
 
 
-const AddOns = ({stepThreeColor,isYearly}) =>{
-    const [isChecked, setIsChecked] = useState(false);
-
-
-
-    const checkHandler = () =>{
-        setIsChecked(!isChecked)
-    }
-
+const AddOns = ({stepThreeColor,isYearly, handleAddsSelection, selectedAdds, addsError, addsHandler, backToStepTwo}) =>{
+    
     const addons = [
         {
             addsName : "Online Service",
@@ -35,21 +28,21 @@ const AddOns = ({stepThreeColor,isYearly}) =>{
         {
             addsName : "Online Service",
             addsText : "Access to multiplay games",
-            addsPrice: "+10$/mo",
+            addsPrice: "+10$/yr",
             isMonthly: false,
 
         },
         {
             addsName : "Large Storage",
             addsText : "Extra 1TB of cloud save",
-            addsPrice: "+20$/mo",
+            addsPrice: "+20$/yr",
             isMonthly: false,
 
         },
         {
             addsName : "Customizable profile",
             addsText : "Custom theme on your profile",
-            addsPrice: "+20$/mo",
+            addsPrice: "+20$/yr",
             isMonthly: false,
 
         },
@@ -63,8 +56,8 @@ const AddOns = ({stepThreeColor,isYearly}) =>{
                     
                     <div className={`flex flex-col mt-8 ${isYearly?'hidden':'block'}`}>
                       {monthlyAddOns.map((add)=>(
-                           <div onClick={checkHandler} className=" flex cursor-pointer items-center p-4 border-2 rounded-md  mt-4">
-                           <input className="ml-1" id="ads-check" checked={`${isChecked?"checked":''}`}  type="checkbox"/>
+                           <div key={add.addsName}  onClick={()=>handleAddsSelection(add)} className={`flex cursor-pointer items-center p-4 border-2 rounded-md  mt-4 ${selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === true) ? 'border-blue-500' : 'border-gray-300'} ${addsError?'border-red-400':''}`}>
+                           <input className="ml-1" id="ads-check" checked={selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === true)?'checked':''} onChange={() => {}} type="checkbox"/>
                            <div className="flex flex-col pl-6  w-full">
                                <p className="text-blue-950 font-bold">{add.addsName}</p>
                                <p className="text-sm">{add.addsText}</p>
@@ -75,8 +68,8 @@ const AddOns = ({stepThreeColor,isYearly}) =>{
                     </div>
                     <div className={`flex flex-col mt-8 ${isYearly?'block':'hidden'}`}>
                       {yearlyAddOns.map((add)=>(
-                           <div onClick={checkHandler} className=" flex cursor-pointer items-center p-4 border-2 rounded-md  mt-4">
-                           <input className="ml-1" id="ads-check" checked={`${isChecked?"checked":''}`}  type="checkbox"/>
+                           <div key={add.addsName}  onClick={()=>handleAddsSelection(add)} className={`flex cursor-pointer items-center p-4 border-2 rounded-md  mt-4  ${selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === false) ? 'border-blue-500' : 'border-gray-300'} ${addsError?'border-red-400':''}`}>
+                           <input className="ml-1" id="ads-check" checked={selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === false)?'checked':''} onChange={() => {}} type="checkbox"/>
                            <div className="flex flex-col pl-6  w-full">
                                <p className="text-blue-950 font-bold">{add.addsName}</p>
                                <p className="text-sm">{add.addsText}</p>
@@ -88,8 +81,8 @@ const AddOns = ({stepThreeColor,isYearly}) =>{
 
                     <div className='flex flex-col '>
                         <div className="flex flex-row justify-between">
-                        <button  className='place-self-start bg-white mb-4 mt-20 text-gray-500 font-bold rounded-md'>Go back</button>
-                        <button  className='place-self-end bg-blue-900 mb-4 w-1/4 px-2 py-3 mt-20 text-white rounded-md'>Next Step</button>
+                        <button onClick={backToStepTwo} className='place-self-start bg-white mb-4 mt-20 text-gray-500 font-bold rounded-md'>Go back</button>
+                        <button onClick={addsHandler} className='place-self-end bg-blue-900 mb-4 w-1/4 px-2 py-3 mt-20 text-white rounded-md'>Next Step</button>
                         </div>
                         
                     </div> 

@@ -1,11 +1,59 @@
 import { useState } from "react";
+import arcade from '../icon-arcade.svg'
+import advanced from '../icon-advanced.svg'
+import pro from '../icon-pro.svg'
 
 
 
-const SelectPlan = ({stepTwoColor,backHandlerOne,plans, selectedPlan,handlePlanSelection, handleToggleChange, isYearly, planHandler, planError}) =>{
+const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelection, handleToggleChange, isYearly, planHandler, planError}) =>{
+
+    const plans = [
+        {
+          name: 'Arcade',
+          priceMonthly: '$9/mo',
+          isMonthly: true,
+          imageUrl: arcade,
+        },
+        {
+          name: 'Advanced',
+          priceMonthly: '$12/mo',
+          isMonthly: true,
+          imageUrl: advanced,
+        },
+        {
+          name: 'Pro',
+          priceMonthly: '$15/mo',
+          isMonthly: true,
+          imageUrl: pro,
+        },
+
+        {
+            name: 'Arcade',
+            isMonthly: false,
+            priceYearly: '$90/yr',
+            imageUrl: arcade,
+            freeYearPlan:"2 months free"
+          },
+          {
+            name: 'Advanced',
+            isMonthly: false,
+            priceYearly: '$120/yr',
+            imageUrl: advanced,
+            freeYearPlan:"2 months free"
+          },
+          {
+            name: 'Pro',
+            isMonthly: false,
+            priceYearly: '$150/yr',
+            imageUrl: pro,
+            freeYearPlan:"2 months free"
+          }
+      ];
+
     const monthlyPlans = plans.filter((plan) => plan.isMonthly);
     const yearlyPlans = plans.filter((plan) => !plan.isMonthly);
     
+
     
 
     return (
@@ -13,7 +61,7 @@ const SelectPlan = ({stepTwoColor,backHandlerOne,plans, selectedPlan,handlePlanS
                     <p className='text-blue-950 text-4xl mt-10 font-bold'>Select your plan</p>
                     <p className='text-gray-500 mt-4 text-sm'>You have the option of monthly and yearly billing</p>
 
-                    {planError && (<p className='text-red-500 mt-6 text-sm text-center'>Please Select A Plan</p>)}
+                    {/* {planError && (<p className='text-red-500 mt-6 text-sm text-center'>Please Select A Plan</p>)} */}
                         
                      <div className={`flex flex-row space-x-4 mt-10 ${isYearly?'hidden':'block'}`}>
                      {(monthlyPlans).map((plan)=>(
@@ -87,7 +135,7 @@ const SelectPlan = ({stepTwoColor,backHandlerOne,plans, selectedPlan,handlePlanS
 
                     <div className='flex flex-col mt-8'>
                         <div className="flex flex-row justify-between">
-                        <button onClick={backHandlerOne} className='place-self-start bg-white mb-4 mt-20 text-gray-500 font-bold rounded-md'>Go back</button>
+                        <button onClick={backToStepOne} className='place-self-start bg-white mb-4 mt-20 text-gray-500 font-bold rounded-md'>Go back</button>
                         <button onClick={planHandler} className='place-self-end bg-blue-900 mb-4 w-1/4 px-2 py-3 mt-20 text-white rounded-md'>Next Step</button>
                         </div>
                         
