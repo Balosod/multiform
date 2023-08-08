@@ -1,4 +1,5 @@
-import bgSide from '../bg-sidebar-desktop.svg'
+// import bgSide from '../bg-sidebar-desktop.svg';
+// import bgmobile from '../bg-sidebar-mobile.svg'
 
 
 const Step = ({stepOneColor,stepTwoColor,stepThreeColor, stepFourColor}) =>{
@@ -31,21 +32,20 @@ const Step = ({stepOneColor,stepTwoColor,stepThreeColor, stepFourColor}) =>{
     ]
 
     return(
-        <div className="rounded-md w-1/3 "
-        style={{
-            backgroundImage: `url(${bgSide})`,
-            backgroundRepeat: 'no-repeat',
-        }}
+        
+        <div className="sm:bg-mobile md:bg-desktop md:rounded-md bg-no-repeat bg-cover sm:w-full md:w-2/4 "
+       
         >
+            <div className="flex sm:flex-row md:flex-col  justify-center  md:ml-0 sm:mt-6 sm:mb-16 sm:mt-6 ">
             {steps.map((step)=>(
                 
-                <div key={step.name} className='flex flex-row space-x-2 pl-8 pt-6'>
+                <div key={step.name} className='flex flex-row  space-x-4 sm:pl-4 sm:pb-4 md:pb-0 md:pl-8 md:pt-6'>
                     <div className={`flex rounded-full mt-3 border-2 w-8 h-8 border-gray-400 mt-2 ${step.stage?'bg-teal-300':''}`}>
                         <div className={`mx-auto my-auto ${step.stage?'':'text-white'}`} >
                             {step.figure}
                         </div>
                     </div>
-                    <div className=' flex flex-col '>
+                    <div className=' sm:hidden md:block flex flex-col '>
                        <p className='text-gray-400'>{step.name}</p>
                        <p className='text-white'>{step.content}</p>
                     </div>
@@ -53,8 +53,33 @@ const Step = ({stepOneColor,stepTwoColor,stepThreeColor, stepFourColor}) =>{
                 </div>
            
             ))}
+            </div>
         </div>
+        
+        
     )
 }
 
 export default Step;
+
+
+{/* <div className="rounded-md w-full p-10  sm:block md:hidden"
+        // style={{
+        //     backgroundImage: `url(${bgmobile})`,
+        //     backgroundRepeat: 'no-repeat',
+        // }}
+        // > <div className='flex flex-row space-x-2 justify-center sm:mb-20'>
+        //     {steps.map((step)=>(
+                
+        //         <div key={step.name} className=''>
+        //             <div className={`flex rounded-full mt-3 border-2 w-8 h-8 border-gray-400 mt-2 ${step.stage?'bg-teal-300':''}`}>
+        //                 <div className={`mx-auto my-auto ${step.stage?'':'text-white'}`} >
+        //                     {step.figure}
+        //                 </div>
+        //             </div>
+        //         </div>
+           
+        //     ))}
+        //     </div>
+        // </div> */}
+    

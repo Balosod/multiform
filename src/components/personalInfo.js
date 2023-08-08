@@ -3,11 +3,12 @@
 
 const PersonalInfo = ({stepOneColor, name,email,phone,nameError,emailError,phoneError,emailValid,phoneValid,infoHandler, nameHandler,emailHandler,phoneHandler}) => {
     return(
-        <div className={`${stepOneColor?'block':'hidden'}`}>
-                    <p className='text-blue-950 text-4xl mt-10 font-bold'>Personal info</p>
-                    <p className='text-gray-500 mt-4 text-sm'>Please provide your name, email address and phone number</p>
+        <div className={`${stepOneColor?'block':'hidden'} -mt-10`}>
+            <div className="sm:bg-white  sm:rounded-md sm:mx-6 sm:p-6 md:p-12  ">
+                    <p className='text-blue-950 sm:text-2xl md:text-4xl md:mt-2 font-bold'>Personal info</p>
+                    <p className='text-gray-500  mt-4 text-sm'>Please provide your name, email address and phone number</p>
                     <div className='flex flex-col mt-8'>
-                        <div className='flex justify-between mt-6'>
+                        <div className='flex justify-between md:mt-6'>
                             <label className='text-blue-950  text-sm'>Name</label>
                             {nameError && (<label className='text-red-500 text-sm font-bold' >This field is required</label>)}
                             
@@ -29,11 +30,15 @@ const PersonalInfo = ({stepOneColor, name,email,phone,nameError,emailError,phone
                             {!phoneValid && (<label className='text-red-500 text-sm font-bold' >phone number not valid</label>)}
                     </div>
                         <input type='text' placeholder="e.g, +1 234 567 890" value={phone} onChange={(e)=>phoneHandler(e.target.value)} className={`h-12  border-2 border-gray-200 pl-4 rounded-md hover:border-purple-700 hover:border focus:border ${phoneError?" placeholder-red-400":''}`}/>
-                        <button onClick={infoHandler} className='place-self-end bg-blue-900 mb-4 w-1/4 px-2 py-3 mt-20 text-white rounded-md'>Next Step</button>
                     </div>
                    
-                    
+                    </div> 
+
+                    <div className="flex justify-end sm:bg-white  sm:p-2 md:p-0 sm:mt-20 md:mt-0 sm:full md:w-full">
+                        <button onClick={infoHandler} className='place-self-end bg-blue-900 md:mb-4 sm:w-1/4 sm:mr-4 md:mr-16 md:w-1/4 px-2 py-3 md:mt-20 text-white rounded-md'>Next Step</button>
+                    </div>
                 </div>
+            
     )
 }
 

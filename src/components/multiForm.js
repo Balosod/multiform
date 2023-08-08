@@ -172,6 +172,7 @@ const infoHandler = () => {
     }
 
     const handlePlanSelection = (plan) => {
+        console.log(plan)
         setPlanError(false)
         setSelectedPlan({ name: plan.name, price: plan.priceMonthly || plan.priceYearly, isYearly: isYearly });
           
@@ -199,13 +200,14 @@ const infoHandler = () => {
     return(
 
         <div className="bg-gray-200  flex justify-center">
-            
-           <div className="flex flex-row space-x-10 w-2/3 my-10 rounded-md p-4 bg-white ">
+           {/* sm:bg-yellow-200 md:bg-gray-200 lg:bg-red-200 md:bg-white   */}
+           {/* sm:bg-gray-200 md:bg-white */}
+           <div className="flex sm:flex-col md:flex-row  md:space-x-4 sm:w-full md:w-2/3 md:my-10 md:rounded-md sm:p-0 md:p-4 sm:bg-gray-200 md:bg-white">
             
             {/* Step */}
             <Step stepOneColor={stepOneColor} stepTwoColor={stepTwoColor} stepThreeColor={stepThreeColor} stepFourColor={stepFourColor} />
 
-            <div className=' pl-6 pr-10 w-3/5'>
+            <div className='md:mt-10   sm:full md:w-full'>
 
 
                 {/* PERSONAL INFO */}
