@@ -204,7 +204,7 @@ const infoHandler = () => {
             {/* Step */}
             <Step stepOneColor={stepOneColor} stepTwoColor={stepTwoColor} stepThreeColor={stepThreeColor} stepFourColor={stepFourColor} />
 
-            <div className='lg:mt-10   sm:full md:w-2/3 lg:w-full sm:mb-80 md:mb-0 lg:mb-0'>
+            <div className='lg:mt-10   sm:full md:w-2/3 lg:w-full relative'>
 
 
                 {/* PERSONAL INFO */}
