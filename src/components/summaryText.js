@@ -3,9 +3,9 @@ import thankyou from '../icon-thank-you.svg'
 const SummaryText = ({lastStep}) =>{
     return(
         <div className={`${lastStep?'block':'hidden'} text-center -mt-10`}>
-            <div className="sm:bg-white  sm:rounded-md sm:mx-6 sm:p-6 md:p-12 sm:mb-20 md:mb-0">
+            <div className="sm:bg-white  sm:rounded-md sm:mx-6 sm:p-6 lg:p-12 sm:mb-20 lg:mb-0">
 
-                    <div className="md:mt-20 md:mb-20 p-10">
+                    <div className="lg:mt-20 lg:mb-20 p-10">
                     <img
                                  className="mx-auto"
                                  src={thankyou}

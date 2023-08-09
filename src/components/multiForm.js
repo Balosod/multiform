@@ -202,12 +202,12 @@ const infoHandler = () => {
         <div className="bg-gray-200  flex justify-center">
            {/* sm:bg-yellow-200 md:bg-gray-200 lg:bg-red-200 md:bg-white   */}
            {/* sm:bg-gray-200 md:bg-white */}
-           <div className="flex sm:flex-col md:flex-row  md:space-x-4 sm:w-full md:w-2/3 md:my-10 md:rounded-md sm:p-0 md:p-4 sm:bg-gray-200 md:bg-white">
+           <div className="flex sm:flex-col md:flex-row  md:space-x-2 lg:flex-row  md:space-x-4 lg:space-x-4 sm:w-full md:w-2/3 lg:w-2/3 md:my-10 lg:my-10 md:rounded-md lg:rounded-md sm:p-0 md:p-4 lg:p-4 sm:bg-gray-200 md:bg-white lg:bg-white">
             
             {/* Step */}
             <Step stepOneColor={stepOneColor} stepTwoColor={stepTwoColor} stepThreeColor={stepThreeColor} stepFourColor={stepFourColor} />
 
-            <div className='md:mt-10   sm:full md:w-full'>
+            <div className='lg:mt-10   sm:full md:w-2/3 lg:w-full'>
 
 
                 {/* PERSONAL INFO */}

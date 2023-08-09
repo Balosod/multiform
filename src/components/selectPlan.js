@@ -57,18 +57,18 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
     
 
     return (
-        <div className={`${stepTwoColor?'block':'hidden'} -mt-10`}>
-             <div className="sm:bg-white  sm:rounded-md sm:mx-6 sm:p-6 md:p-12">
-                    <p className='text-blue-950 sm:text-2xl md:text-4xl  font-bold'>Select your plan</p>
-                    <p className='text-gray-500 md:mt-2 md:mb-10 text-sm'>You have the option of monthly and yearly billing</p>
+        <div className={`${stepTwoColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10`}>
+             <div className="sm:bg-white  sm:rounded-md sm:mx-6 sm:p-6 lg:p-12">
+                    <p className='text-blue-950 sm:text-2xl lg:text-4xl  font-bold'>Select your plan</p>
+                    <p className='text-gray-500 lg:mt-2 lg:mb-10 sm:text-sm md:text-xs lg:text-sm'>You have the option of monthly and yearly billing</p>
 
                     {/* {planError && (<p className='text-red-500 mt-6 text-sm text-center'>Please Select A Plan</p>)} */}
                         
-                     <div className={`flex sm:flex-col md:flex-row md:space-x-4 md:mt-10  ${isYearly?'hidden':'block'}`}>
+                     <div className={`flex sm:flex-col md:flex-row lg:flex-row md:space-x-2 lg:space-x-4 lg:mt-10  ${isYearly?'hidden':'block'}`}>
                      {(monthlyPlans).map((plan)=>(
                         
-                         <div key={plan.name}  className={`border-2 cursor-pointer rounded-md bg-white sm:w-full sm:mt-4 md:mt-0 md:w-1/3 p-4 ${selectedPlan.name === plan.name && selectedPlan.isYearly === false?'border-blue-500':'border-gray-300'} ${planError?'border-red-400':''}`} onClick={() => handlePlanSelection(plan)}>
-                         <div className="flex sm:flex-row md:flex-col">
+                         <div key={plan.name}  className={`border-2 cursor-pointer rounded-md bg-white sm:w-full sm:mt-4 lg:mt-0 md:w-1/3 lg:w-1/3 sm:p-4 md:p-4 lg:p-4 ${selectedPlan.name === plan.name && selectedPlan.isYearly === false?'border-blue-500':'border-gray-300'} ${planError?'border-red-400':''}`} onClick={() => handlePlanSelection(plan)}>
+                         <div className="flex sm:flex-row md:flex-col lg:flex-col">
                              <img
                                  className=""
                                  src={plan.imageUrl}
@@ -76,24 +76,24 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                                  width={40}
                                  height={40}
                                  />
-                            <p className="flex sm:ml-4 md:ml-0 sm:flex-col md:flex-col">
-                            <p className="text-blue-950 text-left font-bold  md:mt-10">{plan.name}</p>
-                            <p className="text-gray-500 text-left sm:mt-1 md:mt-2">{isYearly?plan.priceYearly:plan.priceMonthly}</p>
+                            <p className="flex sm:ml-4 md:ml-0 lg:ml-0 sm:flex-col lg:flex-col">
+                            <p className="text-blue-950 text-left sm:text-sm md:text-xs lg:text-sm font-bold md:mt-4 lg:mt-10">{plan.name}</p>
+                            <p className="text-gray-500 text-left sm:text-sm md:text-xs lg:text-sm sm:mt-1 md:mt-2 lg:mt-2">{isYearly?plan.priceYearly:plan.priceMonthly}</p>
                             </p>
                              
                              
-                             <p className="text-blue-950 text-left text-sm md:mt-1">{isYearly?plan.freeYearPlan:''}</p>
+                             <p className="text-blue-950 text-left text-sm lg:mt-1">{isYearly?plan.freeYearPlan:''}</p>
                          </div>
                                  
                          </div>
                      ))}
                     </div>   
 
-                    <div className={`flex sm:flex-col md:flex-row md:space-x-4 md:mt-10 ${isYearly?'block':'hidden'}`}>
+                    <div className={`flex sm:flex-col md:flex-row lg:flex-row md:space-x-2 lg:space-x-4 lg:mt-10 ${isYearly?'block':'hidden'}`}>
                      {(yearlyPlans).map((plan)=>(
                         
-                        <div key={plan.name}  className={`border-2 cursor-pointer rounded-md bg-white sm:w-full sm:mt-4 md:mt-0 md:w-1/3 p-4 ${selectedPlan.name === plan.name && selectedPlan.isYearly === true?'border-blue-500':'border-gray-300'} ${planError?'border-red-400':''}`} onClick={() => handlePlanSelection(plan)}>
-                        <div className="flex sm:flex-row md:flex-col">
+                        <div key={plan.name}  className={`border-2 cursor-pointer rounded-md bg-white sm:w-full sm:mt-4 lg:mt-0 md:w-1/3 lg:w-1/3 sm:p-4 md:p-4 lg:p-4 ${selectedPlan.name === plan.name && selectedPlan.isYearly === true?'border-blue-500':'border-gray-300'} ${planError?'border-red-400':''}`} onClick={() => handlePlanSelection(plan)}>
+                        <div className="flex sm:flex-row md:flex-col lg:flex-col">
                             <img
                                 className=""
                                 src={plan.imageUrl}
@@ -101,10 +101,10 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                                 width={40}
                                 height={40}
                                 />
-                           <p className="flex sm:ml-4 md:ml-0 sm:flex-col md:flex-col">
-                           <p className="text-blue-950 text-left font-bold  md:mt-10">{plan.name}</p>
-                           <p className="text-gray-500 text-left sm:mt-1 md:mt-2">{isYearly?plan.priceYearly:plan.priceMonthly}</p>
-                           <p className="text-blue-950 text-left text-sm md:mt-1">{isYearly?plan.freeYearPlan:''}</p>
+                           <p className="flex sm:ml-4 md:ml-0 lg:ml-0 sm:flex-col lg:flex-col">
+                           <p className="text-blue-950 text-left sm:text-sm md:text-xs lg:text-sm font-bold  md:mt-4 lg:mt-10">{plan.name}</p>
+                           <p className="text-gray-500 text-left sm:text-sm md:text-xs lg:text-sm m:mt-1 md:mt-2 lg:mt-2">{isYearly?plan.priceYearly:plan.priceMonthly}</p>
+                           <p className="text-blue-950 text-left sm:text-sm md:text-xs lg:text-sm text-sm md:mt-2 lg:mt-1">{isYearly?plan.freeYearPlan:''}</p>
                            </p>
                             
                             
@@ -143,10 +143,10 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                 </div>  
                    
 
-                    <div className='flex flex-col sm:bg-white    md:p-0 sm:mt-10 md:mt-0 sm:full md:w-full'>
-                        <div className="flex flex-row justify-between sm:mx-4 md:mx-20">
-                        <button onClick={backToStepOne} className='place-self-start bg-white mb-4 sm:mt-8 md:mt-20 text-gray-500 font-bold rounded-md'>Go back</button>
-                        <button onClick={planHandler} className='place-self-end bg-blue-900 mb-4 sm:w-2/5 md:w-1/4 px-2 py-3 sm:mt-4 md:mt-20 text-white rounded-md'>Next Step</button>
+                    <div className='flex flex-col sm:bg-white  md:bg-red-300   lg:p-0 sm:mt-10 lg:mt-0 sm:full lg:w-full'>
+                        <div className="flex flex-row justify-between sm:mx-4 md:mx-12 lg:mx-20">
+                        <button onClick={backToStepOne} className='md:text-sm lg:text-sm place-self-start bg-white mb-4 sm:mt-8 md:mt-6 lg:mt-20 text-gray-500 font-bold rounded-md'>Go back</button>
+                        <button onClick={planHandler} className='md:text-sm lg:text-sm place-self-end bg-blue-900 mb-4 sm:w-2/5 md:w-2/5 lg:w-1/4 sm:px-2 md:px-0 lg:px-2 py-3 sm:mt-4 lg:mt-20 text-white rounded-lg'>Next Step</button>
                         </div>
                         
                     </div> 
