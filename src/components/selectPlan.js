@@ -59,7 +59,7 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
 
     return (
         <div className={`${stepTwoColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10`}>
-             <div className="sm:bg-white  sm:rounded-lg sm:mx-6 sm:p-6 lg:p-12">
+             <div className="sm:bg-white  sm:rounded-lg sm:mx-6 sm:p-6 lg:p-12 ">
                     <p className='text-blue-950 sm:text-2xl lg:text-4xl  font-bold'>Select your plan</p>
                     <p className='text-gray-500 lg:mt-2 lg:mb-10 sm:text-sm md:text-xs lg:text-sm'>You have the option of monthly and yearly billing</p>
 
@@ -144,7 +144,7 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                 </div>  
                    
 
-                    <div className='flex flex-col sm:bg-white   lg:p-0 sm:mt-10 lg:mt-0 sm:full lg:w-full'>
+                    <div className='flex flex-col sm:bg-red-200   lg:p-0 sm:mt-10 lg:mt-0 sm:full lg:w-full'>
                         <div className="flex flex-row justify-between sm:mx-4 md:mx-12 lg:mx-20">
                         <button onClick={backToStepOne} className='md:text-sm lg:text-sm place-self-start bg-white mb-4 sm:mt-8 md:mt-6 lg:mt-20 text-gray-500 font-bold rounded-md'>Go back</button>
                         <button onClick={planHandler} className='md:text-sm lg:text-sm place-self-end bg-blue-900 mb-4 sm:w-2/5 md:w-2/5 lg:w-1/4 sm:px-2 md:px-0 lg:px-2 py-3 sm:mt-4 lg:mt-20 text-white rounded-lg'>Next Step</button>
