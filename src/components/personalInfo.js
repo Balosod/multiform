@@ -29,7 +29,7 @@ const PersonalInfo = ({stepOneColor, name,email,phone,nameError,emailError,phone
 
       
     return(
-        <div className={`${stepOneColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10`}>
+        <div className={`${stepOneColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10`} style={containerStyle}>
             <div className="sm:bg-white sm:rounded-lg sm:mx-6 sm:p-6 lg:p-12  ">
                     <p className='text-blue-950 sm:text-2xl lg:text-4xl lg:mt-2 font-bold'>Personal info</p>
                     <p className='text-gray-500  mt-4 text-sm'>Please provide your name, email address and phone number</p>
