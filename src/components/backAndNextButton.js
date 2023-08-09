@@ -1,6 +1,6 @@
 const Button = ({ back, next }) => {
   return (
-    <div className="flex flex-col sm:bg-white   lg:p-0 sm:mt-10 lg:mt-0 sm:full lg:w-full">
+    <div className="flex flex-col sm:bg-white   lg:p-0 sm:mt-6 lg:mt-0 sm:full lg:w-full">
       <div className="flex flex-row justify-between sm:mx-4 md:mx-12 lg:mx-20">
         <button
           onClick={back}
