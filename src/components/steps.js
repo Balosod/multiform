@@ -63,23 +63,3 @@ const Step = ({stepOneColor,stepTwoColor,stepThreeColor, stepFourColor}) =>{
 export default Step;
 
 
-{/* <div className="rounded-md w-full p-10  sm:block md:hidden"
-        // style={{
-        //     backgroundImage: `url(${bgmobile})`,
-        //     backgroundRepeat: 'no-repeat',
-        // }}
-        // > <div className='flex flex-row space-x-2 justify-center sm:mb-20'>
-        //     {steps.map((step)=>(
-                
-        //         <div key={step.name} className=''>
-        //             <div className={`flex rounded-full mt-3 border-2 w-8 h-8 border-gray-400 mt-2 ${step.stage?'bg-teal-300':''}`}>
-        //                 <div className={`mx-auto my-auto ${step.stage?'':'text-white'}`} >
-        //                     {step.figure}
-        //                 </div>
-        //             </div>
-        //         </div>
-           
-        //     ))}
-        //     </div>
-        // </div> */}
-    

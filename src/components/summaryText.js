@@ -19,9 +19,7 @@ const SummaryText = ({lastStep}) =>{
 
                     </div>
                     </div>
-                    <div className="text-center">
-                        <small className="text-blue-950">powered by sodiq</small>
-                    </div>
+                    
                 </div>
 
     )

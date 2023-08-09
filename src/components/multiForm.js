@@ -5,6 +5,7 @@ import SelectPlan from "./selectPlan";
 import AddOns from "./addOns";
 import Summary from "./summary";
 import SummaryText from "./summaryText";
+import Footer from "./footer";
 
 
 
@@ -199,7 +200,7 @@ const infoHandler = () => {
 
     return(
 
-        <div className="bg-gray-200  flex justify-center">
+        <div className="bg-gray-200 h-screen flex justify-center">
            {/* sm:bg-yellow-200 md:bg-gray-200 lg:bg-red-200 md:bg-white   */}
            {/* sm:bg-gray-200 md:bg-white */}
            <div className="flex sm:flex-col md:flex-row  md:space-x-2 lg:flex-row  md:space-x-4 lg:space-x-4 sm:w-full md:w-2/3 lg:w-2/3 md:my-10 lg:my-10 md:rounded-lg lg:rounded-lg sm:p-0 md:p-4 lg:p-4 sm:bg-gray-200 md:bg-white lg:bg-white">
@@ -228,6 +229,8 @@ const infoHandler = () => {
 
                 {/* SUMMARY TEXT */}
                 <SummaryText lastStep={lastStep}/>
+
+                <Footer />
 
 
 
