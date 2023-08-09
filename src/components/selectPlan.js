@@ -77,10 +77,10 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                                  width={40}
                                  height={40}
                                  />
-                            <p className="flex sm:ml-4 md:ml-0 lg:ml-0 sm:flex-col lg:flex-col">
+                            <div className="flex sm:ml-4 md:ml-0 lg:ml-0 sm:flex-col lg:flex-col">
                             <p className="text-blue-950 text-left sm:text-sm md:text-xs lg:text-sm font-bold md:mt-4 lg:mt-10">{plan.name}</p>
                             <p className="text-gray-500 text-left sm:text-sm md:text-xs lg:text-sm sm:mt-1 md:mt-2 lg:mt-2">{isYearly?plan.priceYearly:plan.priceMonthly}</p>
-                            </p>
+                            </div>
                              
                              
                              <p className="text-blue-950 text-left text-sm lg:mt-1">{isYearly?plan.freeYearPlan:''}</p>
@@ -102,11 +102,11 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                                 width={40}
                                 height={40}
                                 />
-                           <p className="flex sm:ml-4 md:ml-0 lg:ml-0 sm:flex-col lg:flex-col">
+                           <div className="flex sm:ml-4 md:ml-0 lg:ml-0 sm:flex-col lg:flex-col">
                            <p className="text-blue-950 text-left sm:text-sm md:text-xs lg:text-sm font-bold  md:mt-4 lg:mt-10">{plan.name}</p>
                            <p className="text-gray-500 text-left sm:text-sm md:text-xs lg:text-sm m:mt-1 md:mt-2 lg:mt-2">{isYearly?plan.priceYearly:plan.priceMonthly}</p>
                            <p className="text-blue-950 text-left sm:text-sm md:text-xs lg:text-sm text-sm md:mt-2 lg:mt-1">{isYearly?plan.freeYearPlan:''}</p>
-                           </p>
+                           </div>
                             
                             
                             
@@ -144,8 +144,10 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                 </div>  
 
                     <Button back={backToStepOne} next={planHandler} />
+                    
                    
                 </div>
+                
     )
 }
 

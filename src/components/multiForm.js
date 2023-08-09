@@ -113,10 +113,12 @@ const infoHandler = () => {
     const stateOne = checkAllInfo()
     console.log(stateOne)
     if (stateOne){
-        console.log("yes2")
         setStepOneColor(false)
         setStepTwoColor(true)
+        return
     }
+    setStepOneColor(true)
+    setStepTwoColor(false)
 
 }
 
