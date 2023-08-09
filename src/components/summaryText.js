@@ -3,7 +3,7 @@ import thankyou from '../icon-thank-you.svg'
 const SummaryText = ({lastStep}) =>{
     return(
         <div className={`${lastStep?'block':'hidden'} text-center sm:-mt-10 md:-mt-0 lg:-mt-10`}>
-            <div className="sm:bg-white  sm:rounded-md sm:mx-6 sm:p-6 lg:p-12 sm:mb-20 lg:mb-0">
+            <div className="sm:bg-white  sm:rounded-lg sm:mx-6 sm:p-6 lg:p-12 sm:mb-20 lg:mb-0">
 
                     <div className="lg:mt-20 lg:mb-20 p-10">
                     <img
@@ -19,7 +19,9 @@ const SummaryText = ({lastStep}) =>{
 
                     </div>
                     </div>
-                    
+                    <div className="text-center">
+                        <small className="text-blue-950">powered by sodiq</small>
+                    </div>
                 </div>
 
     )

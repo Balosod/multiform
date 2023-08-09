@@ -58,7 +58,7 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
 
     return (
         <div className={`${stepTwoColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10`}>
-             <div className="sm:bg-white  sm:rounded-md sm:mx-6 sm:p-6 lg:p-12">
+             <div className="sm:bg-white  sm:rounded-lg sm:mx-6 sm:p-6 lg:p-12">
                     <p className='text-blue-950 sm:text-2xl lg:text-4xl  font-bold'>Select your plan</p>
                     <p className='text-gray-500 lg:mt-2 lg:mb-10 sm:text-sm md:text-xs lg:text-sm'>You have the option of monthly and yearly billing</p>
 
@@ -67,7 +67,7 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                      <div className={`flex sm:flex-col md:flex-row lg:flex-row md:space-x-2 lg:space-x-4 lg:mt-10  ${isYearly?'hidden':'block'}`}>
                      {(monthlyPlans).map((plan)=>(
                         
-                         <div key={plan.name}  className={`border-2 cursor-pointer rounded-md bg-white sm:w-full sm:mt-4 lg:mt-0 md:w-1/3 lg:w-1/3 sm:p-4 md:p-2 lg:p-4 ${selectedPlan.name === plan.name && selectedPlan.isYearly === false?'border-blue-500':'border-gray-300'} ${planError?'border-red-400':''}`} onClick={() => handlePlanSelection(plan)}>
+                         <div key={plan.name}  className={`border-2 cursor-pointer rounded-lg bg-white sm:w-full sm:mt-4 lg:mt-0 md:w-1/3 lg:w-1/3 sm:p-4 md:p-2 lg:p-4 ${selectedPlan.name === plan.name && selectedPlan.isYearly === false?'border-blue-500':'border-gray-300'} ${planError?'border-red-400':''}`} onClick={() => handlePlanSelection(plan)}>
                          <div className="flex sm:flex-row md:flex-col lg:flex-col">
                              <img
                                  className=""
@@ -150,6 +150,9 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                         </div>
                         
                     </div> 
+                    <div className="text-center">
+                        <small className="text-blue-950">powered by sodiq</small>
+                    </div>
                 </div>
     )
 }

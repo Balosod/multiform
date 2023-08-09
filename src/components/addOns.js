@@ -51,13 +51,13 @@ const AddOns = ({stepThreeColor,isYearly, handleAddsSelection, selectedAdds, add
     const yearlyAddOns = addons.filter((adds) => !adds.isMonthly);
     return(
         <div className={`${stepThreeColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10`}>
-            <div className="sm:bg-white  sm:rounded-md sm:mx-6 sm:p-6 lg:p-12">
+            <div className="sm:bg-white  sm:rounded-lg sm:mx-6 sm:p-6 lg:p-12">
                     <p className='text-blue-950 sm:text-2xl lg:text-4xl font-bold'>Pick add-ons</p>
                     <p className='text-gray-500 mt-2 text-sm'>Add-ons help enhance your gaming experience.</p>
                     
                     <div className={`flex flex-col sm:mt-8 md:mt-2 lg:mt-8 ${isYearly?'hidden':'block'}`}>
                       {monthlyAddOns.map((add)=>(
-                           <div key={add.addsName}  onClick={()=>handleAddsSelection(add)} className={`flex cursor-pointer items-center sm:p-4 md:p-1 lg:p-4 border-2 rounded-md  mt-4 ${selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === true) ? 'border-blue-500' : 'border-gray-300'} ${addsError?'border-red-400':''}`}>
+                           <div key={add.addsName}  onClick={()=>handleAddsSelection(add)} className={`flex cursor-pointer items-center sm:p-4 md:p-1 lg:p-4 border-2 rounded-lg  mt-4 ${selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === true) ? 'border-blue-500' : 'border-gray-300'} ${addsError?'border-red-400':''}`}>
                            <input className="ml-1" id="ads-check" checked={selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === true)?'checked':''} onChange={() => {}} type="checkbox"/>
                            <div className="flex flex-col sm:pl-6 md:pl-2 lg:pl-6  w-full">
                                <p className="text-blue-950  font-bold">{add.addsName}</p>
@@ -69,7 +69,7 @@ const AddOns = ({stepThreeColor,isYearly, handleAddsSelection, selectedAdds, add
                     </div>
                     <div className={`flex flex-col sm:mt-8 md:mt-2 lg:mt-8 ${isYearly?'block':'hidden'}`}>
                       {yearlyAddOns.map((add)=>(
-                           <div key={add.addsName}  onClick={()=>handleAddsSelection(add)} className={`flex cursor-pointer items-center sm:p-4 md:p-1 lg:p-4 border-2 rounded-md  mt-4  ${selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === false) ? 'border-blue-500' : 'border-gray-300'} ${addsError?'border-red-400':''}`}>
+                           <div key={add.addsName}  onClick={()=>handleAddsSelection(add)} className={`flex cursor-pointer items-center sm:p-4 md:p-1 lg:p-4 border-2 rounded-lg  mt-4  ${selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === false) ? 'border-blue-500' : 'border-gray-300'} ${addsError?'border-red-400':''}`}>
                            <input className="lg:ml-1" id="ads-check" checked={selectedAdds.some(item => item.addsName === add.addsName && item.isMonthly === false)?'checked':''} onChange={() => {}} type="checkbox"/>
                            <div className="flex flex-col sm:pl-6 md:pl-2 lg:pl-6  w-full">
                                <p className="text-blue-950 font-bold">{add.addsName}</p>
@@ -92,6 +92,9 @@ const AddOns = ({stepThreeColor,isYearly, handleAddsSelection, selectedAdds, add
                         </div>
                         
                     </div> 
+                    <div className="text-center">
+                        <small className="text-blue-950">powered by sodiq</small>
+                    </div>
                    
                     
                 </div>

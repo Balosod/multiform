@@ -33,7 +33,7 @@ const Step = ({stepOneColor,stepTwoColor,stepThreeColor, stepFourColor}) =>{
 
     return(
         
-        <div className="sm:bg-mobile md:bg-desktop md:rounded-md lg:bg-desktop lg:rounded-md bg-no-repeat bg-cover sm:w-full md:w-2/4 lg:w-2/4 "
+        <div className="sm:bg-mobile md:bg-desktop md:rounded-lg lg:bg-desktop lg:rounded-md bg-no-repeat bg-cover sm:w-full md:w-2/4 lg:w-2/4 "
        
         >
             <div className="flex sm:flex-row md:flex-col  lg:flex-col  justify-center  lg:ml-0 sm:mt-6 sm:mb-16 sm:mt-6 ">

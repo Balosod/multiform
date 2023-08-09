@@ -22,7 +22,7 @@ const Summary = ({stepFourColor,lastStep,isYearly,selectedPlan,selectedAdds,jump
     
     return(
         <div className={`${stepFourColor === true && lastStep === false?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10`}>
-            <div className="sm:bg-white  sm:rounded-md sm:mx-6 sm:p-6 lg:p-12">
+            <div className="sm:bg-white  sm:rounded-lg sm:mx-6 sm:p-6 lg:p-12">
                     <p className='text-blue-950 sm:text-2xl lg:text-4xl  font-bold'>Finishing up</p>
                     <p className='text-gray-500 mt-2 text-sm'>Double-check everything looks OK before confirming.</p>
                     
@@ -69,6 +69,9 @@ const Summary = ({stepFourColor,lastStep,isYearly,selectedPlan,selectedAdds,jump
                         </div>
                         
                     </div> 
+                    <div className="text-center">
+                        <small className="text-blue-950">powered by sodiq</small>
+                    </div>
                     
                 </div>
     )
