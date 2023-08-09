@@ -118,7 +118,7 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                     
 
 
-                    <div  className={`flex justify-center mt-10 space-x-4 ${isYearly?'hidden':'block'}`}>
+                    <div  className={`flex justify-center md:mt-10 sm:mt-4 lg:mt-10 space-x-4 ${isYearly?'hidden':'block'}`}>
                         <div className="text-blue-950 font-bold">Monthly</div>
                         <div onClick={handleToggleChange} className="rounded-full bg-blue-950  pl-1 py-1"
                         style={{
@@ -129,7 +129,7 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                         <div className="text-gray-500 font-bold">Yearly</div>
                      </div>
 
-                     <div  className={`flex justify-center mt-10 space-x-4 ${isYearly?'block':'hidden'}`}>
+                     <div  className={`flex justify-center sm:mt-4 md:mt-10 lg:mt-10 space-x-4 ${isYearly?'block':'hidden'}`}>
                      <div className="text-gray-500 font-bold">Monthly</div>
                         <div onClick={handleToggleChange} className="rounded-full bg-blue-950 pl-6  py-1"
                         style={{
