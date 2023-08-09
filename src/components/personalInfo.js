@@ -3,7 +3,7 @@
 
 const PersonalInfo = ({stepOneColor, name,email,phone,nameError,emailError,phoneError,emailValid,phoneValid,infoHandler, nameHandler,emailHandler,phoneHandler}) => {
     return(
-        <div className={`${stepOneColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10 `}>
+        <div className={`${stepOneColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10 sm:relative`}>
             <div className="sm:bg-white sm:rounded-lg sm:mx-6 sm:p-6 lg:p-12  ">
                     <p className='text-blue-950 sm:text-2xl lg:text-4xl lg:mt-2 font-bold'>Personal info</p>
                     <p className='text-gray-500  mt-4 text-sm'>Please provide your name, email address and phone number</p>
@@ -37,9 +37,7 @@ const PersonalInfo = ({stepOneColor, name,email,phone,nameError,emailError,phone
                     <div className="flex justify-end sm:bg-gray-200  sm:p-2 md:p-0 lg:p-0 sm:mt-20 md:mt-8 lg:mt-0 sm:full lg:w-full">
                         <button onClick={infoHandler} className='md:text-xs lg:text-sm place-self-end bg-blue-900 lg:mb-4 sm:w-1/4 md:w-1/5 sm:mr-4 md:mr-12 lg:mr-16 lg:w-1/4 sm:px-2 md:px-1 lg:px-2 sm:py-3 lg:py-3 lg:mt-20 text-white rounded-lg'>Next Step</button>
                     </div>
-                    {/* <div className="text-center">
-                        <small className="text-blue-950">powered by sodiq</small>
-                    </div> */}
+                   
                 </div>
             
     )
