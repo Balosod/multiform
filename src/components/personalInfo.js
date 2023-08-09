@@ -34,7 +34,7 @@ const PersonalInfo = ({stepOneColor, name,email,phone,nameError,emailError,phone
                    
                     </div> 
 
-                    <div className="flex justify-end sm:bg-white  sm:p-2 md:p-0 lg:p-0 sm:mt-20 md:mt-8 lg:mt-0 sm:full lg:w-full md:bg-red-300">
+                    <div className="flex justify-end sm:bg-white  sm:p-2 md:p-0 lg:p-0 sm:mt-20 md:mt-8 lg:mt-0 sm:full lg:w-full">
                         <button onClick={infoHandler} className='md:text-xs lg:text-sm place-self-end bg-blue-900 lg:mb-4 sm:w-1/4 md:w-1/5 sm:mr-4 md:mr-12 lg:mr-16 lg:w-1/4 sm:px-2 md:px-1 lg:px-2 sm:py-3 lg:py-3 lg:mt-20 text-white rounded-lg'>Next Step</button>
                     </div>
                 </div>
