@@ -1,35 +1,15 @@
 
-import React, { useState, useEffect } from 'react';
+
 
 const PersonalInfo = ({stepOneColor, name,email,phone,nameError,emailError,phoneError,emailValid,phoneValid,infoHandler, nameHandler,emailHandler,phoneHandler}) => {
-    const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
 
-    useEffect(() => {
-        const handleKeyboardOpen = () => {
-          setIsKeyboardOpen(true);
-        };
-    
-        const handleKeyboardClose = () => {
-          setIsKeyboardOpen(false);
-        };
-    
-        window.addEventListener('resize', handleKeyboardClose);
-        window.addEventListener('focus', handleKeyboardOpen);
-    
-        return () => {
-          window.removeEventListener('resize', handleKeyboardClose);
-          window.removeEventListener('focus', handleKeyboardOpen);
-        };
-      }, []);
-    
-      const containerStyle = {
-        minHeight: isKeyboardOpen ? 'calc(100vh - 200px)' : '100vh', // Adjust 200px as needed
-      };
+
+   
     
 
       
     return(
-        <div className={`${stepOneColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10`} style={containerStyle}>
+        <div className={`${stepOneColor?'block':'hidden'} sm:-mt-10 md:-mt-0 lg:-mt-10`} >
             <div className="sm:bg-white sm:rounded-lg sm:mx-6 sm:p-6 lg:p-12  ">
                     <p className='text-blue-950 sm:text-2xl lg:text-4xl lg:mt-2 font-bold'>Personal info</p>
                     <p className='text-gray-500  mt-4 text-sm'>Please provide your name, email address and phone number</p>
