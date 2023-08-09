@@ -63,7 +63,7 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                     <p className='text-blue-950 sm:text-2xl lg:text-4xl  font-bold'>Select your plan</p>
                     <p className='text-gray-500 lg:mt-2 lg:mb-10 sm:text-sm md:text-xs lg:text-sm'>You have the option of monthly and yearly billing</p>
 
-                    {/* {planError && (<p className='text-red-500 mt-6 text-sm text-center'>Please Select A Plan</p>)} */}
+                    
                         
                      <div className={`flex sm:flex-col md:flex-row lg:flex-row md:space-x-2 lg:space-x-4 lg:mt-10  ${isYearly?'hidden':'block'}`}>
                      {(monthlyPlans).map((plan)=>(
@@ -142,7 +142,7 @@ const SelectPlan = ({stepTwoColor,backToStepOne, selectedPlan,handlePlanSelectio
                      
 
                 </div>  
-                
+
                     <Button back={backToStepOne} next={planHandler} />
                    
                 </div>

@@ -102,10 +102,8 @@ const infoHandler = () => {
         setStepOneColor(false)
         setStepTwoColor(true)
         if (name.trim() !== '' && email.trim() !== ''  && validateEmail(email) === true && isValidPhoneNumber(phone) === true){
-            console.log("yes")
             return true
         } else{
-            console.log("no")
             return false
         }
         
@@ -113,12 +111,12 @@ const infoHandler = () => {
     }
     
     const stateOne = checkAllInfo()
-    // console.log(stateOne)
-    // if (stateOne){
-    //     console.log("yes2")
-    //     setStepOneColor(false)
-    //     setStepTwoColor(true)
-    // }
+    console.log(stateOne)
+    if (stateOne){
+        console.log("yes2")
+        setStepOneColor(false)
+        setStepTwoColor(true)
+    }
 
 }
 
@@ -166,7 +164,6 @@ const infoHandler = () => {
     }
 
     const confirm = () =>{
-        // setStepFourColor(false)
         setLastStep(true)
         
        
@@ -181,7 +178,6 @@ const infoHandler = () => {
     
 
     const handleAddsSelection = (add) => {
-        //console.log(add)
         setAddsError(false);
         if (selectedAdds.some(item => item.addsName === add.addsName && item.addsPrice === add.addsPrice)) {
           setSelectedAdds(prevAdds => prevAdds.filter(item => item.addsName !== add.addsName || item.addsPrice !== add.addsPrice));
@@ -194,15 +190,13 @@ const infoHandler = () => {
     //console.log(name)
     //console.log(selectedPlan)
      //console.log(selectedAdds)
-     console.log(isYearly)
+     //console.log(isYearly)
     
 
 
     return(
 
-        <div className="bg-gray-200 h-screen flex justify-center">
-           {/* sm:bg-yellow-200 md:bg-gray-200 lg:bg-red-200 md:bg-white   */}
-           {/* sm:bg-gray-200 md:bg-white */}
+        <div className="bg-gray-200 sm:h-screen md:h-full flex justify-center">
            <div className="flex sm:flex-col md:flex-row  md:space-x-2 lg:flex-row  md:space-x-4 lg:space-x-4 sm:w-full md:w-2/3 lg:w-2/3 md:my-10 lg:my-10 md:rounded-lg lg:rounded-lg sm:p-0 md:p-4 lg:p-4 sm:bg-gray-200 md:bg-white lg:bg-white">
             
             {/* Step */}

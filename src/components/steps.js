@@ -1,5 +1,4 @@
-// import bgSide from '../bg-sidebar-desktop.svg';
-// import bgmobile from '../bg-sidebar-mobile.svg'
+
 
 
 const Step = ({stepOneColor,stepTwoColor,stepThreeColor, stepFourColor}) =>{
